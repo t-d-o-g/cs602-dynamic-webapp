@@ -8,6 +8,12 @@
 			"group": "build"
 		},
 		{
+			"label": "clean package",
+			"type": "shell",
+			"command": "mvn -B clean package",
+			"group": "build"
+		},
+		{
 			"label": "test",
 			"type": "shell",
 			"command": "mvn -B test",

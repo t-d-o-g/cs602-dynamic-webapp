@@ -18,27 +18,38 @@ public class Main extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String title = "Credit Cards";
+		String title = "Welcome to my shop";
 		int radio = -1;
+		String message = "";
 
-		String card = "";
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+
 		try {
 			radio = Integer.parseInt(request.getParameter("rd"));
 		} catch (Exception e) {
-			card = "Please choose a card";
+			message = "Please select a gender";
 		}
 
-		switch(radio) {
-			case 0: card = "You chose Master Card"; break;
-			case 1: card = "You chose Discover Card"; break;
-			case 2: card = "You chose Visa Card"; break;
-			default: card = "Please choose a card";
+		if (firstName.isEmpty() && lastName.isEmpty()) {
+			message = "Please enter your first and last name.";
+		} else if (firstName.isEmpty()){
+			message = "Please enter your first name.";
+		} else if (lastName.isEmpty()){
+			message = "Please enter your last name.";
+		} else {
+			switch(radio) {
+				case 0: message = "Thank you Mr. " + firstName + " " + lastName + "."; break;
+				case 1: message = "Thank you Ms. " + firstName + " " + lastName + "."; break;
+				default: message = "Thank you " + firstName + " " + lastName + ".";
+			}
 		}
+
 		out.println(
 			"<html>\n" +
 			"<head><title>" + title + "</title></head>" +
 			"<h1 align=\"center\">" + title + "</h1>\n" +
-			"<ul>\n" + card + "</ul>\n" + "</body></html>"
+			"<ul>\n" + message + "</ul>\n" + "</body></html>"
 		);
 
 	}
