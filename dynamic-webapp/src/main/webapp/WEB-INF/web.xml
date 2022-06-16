@@ -10,7 +10,7 @@
     <servlet-name>Main</servlet-name>
     <url-pattern>/Main</url-pattern>
   </servlet-mapping>
-  <display-name>DYNAMIC-WEBAPP</display-name>
+  <display-name>dynamic-webapp</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
