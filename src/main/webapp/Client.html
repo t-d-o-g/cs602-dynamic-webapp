@@ -1,18 +1,66 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-<meta charset="UTF-8">
-<title>A Sample form using GET</title>
-</head>
-<body bg="#fdf5e6">
-	<h2>Please enter your name</h2>
-	<form action="http://localhost:8080/dynamic-webapp-0.0.1/Main">
-		First Name: <input type="text" name="firstName"><br>
-		Last Name: <input type="text" name="lastName"><br>
-		<input type="radio" name="rd" value="0">Male<br>
-		<input type="radio" name="rd" value="1">Female<br>
-		<input type="radio" name="rd" value="2">Other<br>
-		<input type="submit" value="Submit">
-	</form>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>What is your name?</title>
+		<style>
+			html, body {
+					background-color:#ffffcc;
+					text-align: center;
+			}
+			#form {
+				display: inline-block;
+				margin: 100px 500px;
+				font-family: Arial; 
+				font-size: 18px;
+				text-align: left;
+			}
+			.header {
+				background-color: yellow;
+				border: 3px solid green;
+				width: 50%;
+				margin: 20px auto;
+				padding: 10px;
+			}
+			.submit-btn {
+				width: 100px;
+				height: 30px;
+				font-size: 20px;
+				margin: 50px 50%;
+			}
+			input {
+				margin: 10px;
+				font-size: 18px;
+			}
+			input[type=radio] {
+				margin-left: 35px;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<h2>Please enter your name</h2>
+		</div>
+		<div id="form">
+			<form action="http://localhost:8080/dynamic-webapp-0.0.1/Main">
+				<div>
+					<span>First Name:</span>
+					<input type="text" name="firstName"><br>
+				</div>
+					<span>Last Name:</span>
+					<input type="text" name="lastName"><br>
+				<div>
+					<span>Gender:</span>
+					<input type="radio" name="rd" value="0">Male
+					<input type="radio" name="rd" value="1">Female
+					<input type="radio" name="rd" value="2">Other<br>
+				</div>
+				<div>
+					<button class="submit-btn" type="submit">Submit</button>
+				</div>
+			</form>
+		</div>
+	</body>
 </html>

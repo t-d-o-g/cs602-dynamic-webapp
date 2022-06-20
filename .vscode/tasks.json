@@ -10,7 +10,7 @@
 		{
 			"label": "clean package",
 			"type": "shell",
-			"command": "mvn -B clean package",
+			"command": "mvn clean package",
 			"group": "build"
 		},
 		{
